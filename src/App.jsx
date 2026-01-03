@@ -1,10 +1,10 @@
-import Countdown from './components/Countdown'
+import CountdownList from './components/CountdownList'
 import './App.css'
 
 function App() {
   return (
     <div className="app-container">
-      <Countdown />
+      <CountdownList />
     </div>
   )
 }
