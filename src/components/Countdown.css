@@ -1,0 +1,137 @@
+.countdown-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem;
+    font-family: 'Mochiy Pop One', sans-serif;
+    color: #333;
+    width: 100vw;
+    height: 100vh;
+    box-sizing: border-box;
+}
+
+.current-time {
+    font-size: 1.5rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 0;
+    font-weight: bold;
+}
+
+.countdown-title {
+    font-size: 3vw;
+    color: #fff;
+    text-shadow: 4px 4px 0px #ff6b6b, 8px 8px 0px #feca57;
+    margin-bottom: 2vh;
+    text-align: center;
+    line-height: 1.2;
+}
+
+.timer-display {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 2vw;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+}
+
+.time-unit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    border-radius: 30px;
+    padding: 1.5vh 0.5vw;
+    box-shadow: 0 15px 0 rgba(0, 0, 0, 0.1);
+    flex: 1;
+    min-width: 0;
+    /* allows shrinking */
+    transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.time-unit:hover {
+    transform: translateY(-5px);
+}
+
+.time-unit.hours {
+    border: 6px solid #ff6b6b;
+    color: #ff6b6b;
+}
+
+.time-unit.minutes {
+    border: 6px solid #4ecdc4;
+    color: #4ecdc4;
+}
+
+.time-unit.seconds {
+    border: 6px solid #feca57;
+    color: #feca57;
+}
+
+.number {
+    font-size: 13vw;
+    line-height: 1;
+    font-weight: bold;
+}
+
+.label {
+    font-size: 2vw;
+    margin-top: 0.5vh;
+    font-weight: bold;
+}
+
+.milliseconds {
+    font-size: 4vw;
+    color: #ff9f43;
+    margin-bottom: 1vh;
+    margin-left: 0.5vw;
+    width: 9vw;
+    text-align: left;
+    align-self: flex-end;
+    padding-bottom: 3.5vh;
+    font-weight: bold;
+}
+
+.message {
+    font-size: 6vw;
+    color: #fff;
+    text-shadow: 4px 4px 0px #ff9f43, 8px 8px 0px #ff6b6b;
+    animation: bounce 1s infinite alternate;
+    text-align: center;
+}
+
+@keyframes bounce {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-20px);
+    }
+}
+
+@media (max-width: 768px) {
+    .timer-display {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .time-unit {
+        width: 80%;
+    }
+
+    .number {
+        font-size: 20vh;
+    }
+
+    .countdown-title {
+        font-size: 2rem;
+    }
+
+    .current-time {
+        font-size: 1rem;
+    }
+}
